@@ -1,0 +1,87 @@
+localrules: all, cleanup
+
+samples = []
+
+with open('/zfs/omics/personal/mpaauw/Xc_genomics/00_metadata/barcodes_to_do.txt', 'r') as f:
+        for row in f:
+                samples.append(row.rstrip())
+
+# samples = ["barcode19", "barcode20", "barcode21", "barcode22", "barcode23", "barcode24", "barcode25", "barcode26"]
+
+rule all:
+	input:
+		expand("flye_assembly/{sample}/assembly.fasta", sample = samples),
+		#expand("overlaps/{sample}.sam", sample = samples),
+		expand("racon_polishing/{sample}/racon.fasta", sample = samples),
+		expand("medaka_polishing/{sample}/consensus.fasta", sample = samples),
+		expand("cleanup/medaka_cleanup_{sample}.done", sample = samples)
+rule assemble:
+	input:
+		"/zfs/omics/personal/mpaauw/Xc_genomics/01_reads/concatenated/{sample}/{sample}-concatenated.fastq"
+	output:
+		"flye_assembly/{sample}/assembly.fasta"
+	params:
+		odir = "flye_assembly/{sample}"
+	conda:
+		"envs/flye.yml"
+	threads: 32 
+	benchmark: 
+		"benchmarks/flye/{sample}.tsv"
+	shell:
+		"flye --nano-raw {input} --threads {threads} --asm-coverage 80 --genome-size 5m --out-dir {params.odir} || touch {output}"
+
+rule minimap:
+	input:
+		assembly="flye_assembly/{sample}/assembly.fasta",
+		reads="/zfs/omics/personal/mpaauw/Xc_genomics/01_reads/concatenated/{sample}/{sample}-concatenated.fastq"
+	output:
+		temp("overlaps-{sample}/{sample}.sam")
+	conda:
+		"envs/racon.yml"
+	threads: 16 
+	benchmark: 
+		"benchmarks/minimap2/{sample}.tsv"
+	shell:
+		"minimap2 -t {threads} -ax map-ont {input.assembly} {input.reads} > {output}" 
+
+rule racon:
+	input:
+		reads="/zfs/omics/personal/mpaauw/Xc_genomics/01_reads/concatenated/{sample}/{sample}-concatenated.fastq",
+		assembly="flye_assembly/{sample}/assembly.fasta",
+		overlaps="overlaps-{sample}/{sample}.sam"
+	output:
+		"racon_polishing/{sample}/racon.fasta"
+	conda: 
+		"envs/racon.yml"
+	threads: 32
+	benchmark:
+		"benchmarks/racon/{sample}.tsv"
+	shell:
+		"racon -m 8 -x -6 -g -8 -t {threads} {input.reads} {input.overlaps} {input.assembly} > {output}"
+
+rule medaka:
+	input:
+		reads="/zfs/omics/personal/mpaauw/Xc_genomics/01_reads/concatenated/{sample}/{sample}-concatenated.fastq",
+		assembly="racon_polishing/{sample}/racon.fasta"
+	output: 
+		consensus_assembly="medaka_polishing/{sample}/consensus.fasta",
+		bam="medaka_polishing/{sample}/calls_to_draft.bam",
+		hdf="medaka_polishing/{sample}/consensus_probs.hdf"
+	params:
+		odir="medaka_polishing/{sample}"
+	conda:
+		"envs/medaka.yml"
+	threads: 32
+	benchmark:
+		"benchmarks/medaka/{sample}.tsv"
+	shell:
+		"medaka_consensus -i {input.reads} -d {input.assembly} -o {params.odir} -t {threads} || touch {output.consensus_assembly} {output.bam} {output.hdf}"
+
+rule cleanup:
+	input:
+		bam="medaka_polishing/{sample}/calls_to_draft.bam",
+		hdf="medaka_polishing/{sample}/consensus_probs.hdf"
+	output:
+		touch("cleanup/medaka_cleanup_{sample}.done")
+	shell:
+		"rm {input.bam} {input.hdf}" 

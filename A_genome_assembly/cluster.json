@@ -1,0 +1,37 @@
+#cluster.json
+{
+"__default__" :
+{
+        "time" : "00:30:00",
+        "n" : 1,
+        "c" : 1,
+        "memory"    : "4G",
+        "partition" : "all",
+        "output"    : "logs/slurm-%A_{rule}.{wildcards}.out",
+        "error"     : "logs/slurm-%A_{rule}.{wildcards}.err",
+},
+"assemble" :
+{
+        "time" : "02:00:00",
+        "memory"    : "120G",
+        "c" : 32
+},
+"minimap" :
+{
+        "time" : "00:15:00",
+        "memory" : "75G",
+        "c" : 16 
+},
+"racon" :
+{
+        "time" : "01:00:00",
+        "memory" : "75G",
+        "c" : 32 
+},
+"medaka" :
+{
+        "time" : "01:00:00",
+        "memory" : "100G",
+        "c" : 32
+}
+}
