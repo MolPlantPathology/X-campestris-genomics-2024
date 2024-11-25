@@ -2,7 +2,7 @@
 
 ## Code run on compute cluster
 
-Running pangenome software software `roary`, resulting in a gene-presence absence matrix. This matrix is later used to count Type III Effector homologs by searching for the words `Xop` `Hop` or `Rip`.
+Running pangenome software software `roary`, resulting in a gene-presence absence matrix. This matrix is later used to count the number of Type III Effector homologs in each genome by searching for the words `Xop` `Hop` or `Rip`. This was done manually in Excel.
 
 ```bash
 roary -p 24 -e -n -r -v /home/mpaauw/personal/Xc_genomics/04_results/20210518_annotation/barcode*/barcode*.gff
