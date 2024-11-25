@@ -1,6 +1,6 @@
 # *X. campestris* genomics study
 
-This repository contains code and data related to the study by Paauw *et al.* (2024) (add link!) on genomics of *X. campestris*.
+This repository contains code and data related to the study by Paauw *et al.* (2024) (add link!) on genomics of *X. campestris*. It must be noted that the repository functions as a scripts and data archive, not as a complete description and interpretation of all datasets and analysis steps. For that, we refer to our paper in *Current Biology*. 
 
 ## Organization
 
