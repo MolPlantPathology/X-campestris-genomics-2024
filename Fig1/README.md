@@ -21,6 +21,42 @@ To calculate pairwise average nucleotide identity values between all genomes, we
 ```
 
 
+Here we calculate genome characteristics per genome:
+
+* GC content
+* total genome size
+* number of CDS in prokka annotation
+* number of tRNAs in prokka annotation
+
+These datasets are plotted in Figure S1.
+
+```bash
+(base) [mpaauw@omics-h0 20210819_genome_parameters]$ cat GC_genome_size.sh 
+#bin/bash!
+while IFS= read -r line; do SAMPLES+=("$line");done < barcodes.txt
+
+awk 'BEGIN {print "barcode", "genome_size", "GC_content"}' | column -t
+
+for sample in "${SAMPLES[@]}"
+do
+	total=$(grep -E 'T|A|C|G' -o ../20210317_assembly96/rotated/${sample}_rotated.fasta | wc -l)
+	GC=$(grep -E 'C|G' -o ../20210317_assembly96/rotated/${sample}_rotated.fasta | wc -l)	
+	echo -n $sample; echo -n -e '\t'; awk "BEGIN {print $total, $GC/$total}" | column -t
+done
+
+(base) [mpaauw@omics-h0 20210819_genome_parameters]$ cat prokka_stats.sh 
+#bin/bash!
+while IFS= read -r line; do SAMPLES+=("$line");done < barcodes.txt
+awk 'BEGIN {print "barcode", "CDS", "tRNA"}' | column -t
+
+for sample in "${SAMPLES[@]}"
+do
+	CDS=$(grep 'CDS' ../20210518_annotation/${sample}/${sample}.txt | cut -d ' ' -f 2)
+	tRNA=$(grep 'tRNA' ../20210518_annotation/${sample}/${sample}.txt | cut -d ' ' -f 2)
+	echo -n $sample; echo -n -e '\t'; awk "BEGIN {print $CDS, $tRNA}" | column -t
+done
+```
+
 ## Code to generate figures
 
 
