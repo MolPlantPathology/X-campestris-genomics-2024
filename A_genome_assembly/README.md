@@ -1,10 +1,10 @@
 # Genome assembly and annotation
 
-We assembled Nanopore sequencing reads using `flye`, followed by a sequential polishing pipeline using `racon`, `medaka`, and later, `homopolish`.
+We sequenced *X. campestris* genomic DNA using Oxford Nanopore Technologies long read technologies. The raw reads are available in NCBI SRA with BioProject number `PRJNA1104797`. Assembly was done using `Flye`, followed by a sequential polishing pipeline using `Racon`, `Medaka`, and later, `Homopolish`.
 
 ## Code run on compute cluster
 
-The first three steps  were run using Snakemake using the Snakefile and `cluster.json`configuration file present in this repository.
+The first three steps were run using [Snakemake](https://snakemake.github.io) - a workflow tool to chain together a set of commands that depend on each others outcome. For this we use the Snakefile and `cluster.json`configuration file present in this repository.
 
 ```bash
 snakemake -n -j 4 --latency-wait 60 --use-conda --cluster-config cluster.json --cluster "sbatch -p {cluster.partition} -n {cluster.n} -c {cluster.c} -t {cluster.time} --mem {cluster.memory} -o {cluster.output}"
@@ -29,7 +29,7 @@ INPUT="/home/mpaauw/personal/Xc_genomics/04_results/20210317_assembly96/medaka_p
 python3 homopolish.py polish -t 2 -a "${INPUT}" -s bacteria.msh -m R9.4.pkl -o "${SAMPLES[$SLURM_ARRAY_TASK_ID]}"
 ```
 
-And similary rotated using a `sbatch` script to run `circlator`
+And similary rotated using a `sbatch` script to run `Circlator`
 
 ```bash
 #!/bin/bash
@@ -50,7 +50,7 @@ INPUT="/home/mpaauw/personal/Xc_genomics/04_results/20210317_assembly96/homopoli
 circlator fixstart "$INPUT" "${SAMPLES[$SLURM_ARRAY_TASK_ID]}_rotated"  
 ```
 
-Then, the genomes were annotated using `prokka` with a home-made database with known virulence factors of plant pathogens, containing 5432 entries (`db_unique.fa`).
+The resulting genome assemblies are also available on NCBI (`PRJNA1104797`), or available as the 'inhouse' version at [Figshare (University of Amsterdam)](https://doi.org/10.21942/uva.25359736.v1). Then, the genomes were annotated using `Prokka` with a home-made database with known virulence factors of plant pathogens, containing 5432 entries (`db_unique.fa`).
 
 ```bash
 (base) [mpaauw@omics-h0 20210518_annotation]$ cat prokka_scratch.sh 

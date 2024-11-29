@@ -2,16 +2,23 @@
 
 ## Code run on compute cluster
 
-Running pangenome software software `roary`, resulting in a gene-presence absence matrix. This matrix is later used to count the number of Type III Effector homologs in each genome by searching for the words `Xop` `Hop` or `Rip`. This was done manually in Excel.
+### Pangenome computation: Roary
+
+Running pangenome software software `Roary`. As input, we take the `prokka` derived `.gff` files. resulting in a gene-presence absence matrix. This matrix is later used to count the number of Type III Effector homologs in each genome by searching for the words `Xop` `Hop` or `Rip`. This was done manually in Excel.
 
 ```bash
 roary -p 24 -e -n -r -v /home/mpaauw/personal/Xc_genomics/04_results/20210518_annotation/barcode*/barcode*.gff
 ```
+### Core genome alignment and phylogenetic tree: PPanGGOLiN & FastTree
 
-We use a different pangenome tool `ppanggolin` to make a core gene alignment, which is later used by `FastTree` to make a phylogenetic tree
+We use a different pangenome tool `PPanGGOLiN` to make a core gene alignment, which is later used by `FastTree` to make a phylogenetic tree. The phylogenetic tree is rooted and visualised later in R.
 
 ```bash
-## add it!
+ppanggolin workflow --anno fasta-list.txt # with fasta-list.txt a tab seperated file with strain identifiers, and the location of the .gff annotation files
+ppanggolin msa -p pangolin.h5 –source dna –phylo
+
+# cd into the directory where the core genome alignment is stored
+fasttree -nt -gtr core_genome_alignment.aln > core_gene_tree.newick 
 ```
 
 To calculate pairwise average nucleotide identity values between all genomes, we used `fastANI`
@@ -20,43 +27,23 @@ To calculate pairwise average nucleotide identity values between all genomes, we
 ## add it!
 ```
 
-
-Here we calculate genome characteristics per genome:
-
-* GC content
-* total genome size
-* number of CDS in prokka annotation
-* number of tRNAs in prokka annotation
-
-These datasets are plotted in Figure S1.
-
-```bash
-(base) [mpaauw@omics-h0 20210819_genome_parameters]$ cat GC_genome_size.sh 
-#bin/bash!
-while IFS= read -r line; do SAMPLES+=("$line");done < barcodes.txt
-
-awk 'BEGIN {print "barcode", "genome_size", "GC_content"}' | column -t
-
-for sample in "${SAMPLES[@]}"
-do
-	total=$(grep -E 'T|A|C|G' -o ../20210317_assembly96/rotated/${sample}_rotated.fasta | wc -l)
-	GC=$(grep -E 'C|G' -o ../20210317_assembly96/rotated/${sample}_rotated.fasta | wc -l)	
-	echo -n $sample; echo -n -e '\t'; awk "BEGIN {print $total, $GC/$total}" | column -t
-done
-
-(base) [mpaauw@omics-h0 20210819_genome_parameters]$ cat prokka_stats.sh 
-#bin/bash!
-while IFS= read -r line; do SAMPLES+=("$line");done < barcodes.txt
-awk 'BEGIN {print "barcode", "CDS", "tRNA"}' | column -t
-
-for sample in "${SAMPLES[@]}"
-do
-	CDS=$(grep 'CDS' ../20210518_annotation/${sample}/${sample}.txt | cut -d ' ' -f 2)
-	tRNA=$(grep 'tRNA' ../20210518_annotation/${sample}/${sample}.txt | cut -d ' ' -f 2)
-	echo -n $sample; echo -n -e '\t'; awk "BEGIN {print $CDS, $tRNA}" | column -t
-done
-```
-
 ## Code to generate figures
 
+### Bioassay data 
+
+```R
+## add file, not full text
+```
+
+### Annotated phylogenetic tree
+
+```R
+## add file, not full text
+```
+
+### FastANI plot
+
+```R
+## add file, not full text
+```
 
