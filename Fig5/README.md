@@ -2,7 +2,26 @@
 
 ## Code run on compute cluster
 
-Run CRISPRCasFinder on all genomes to get the spacer arrays. Note that we use `jq` library to filter the resulting `.json` files for only evidence level 4 CRISPR arrays.
+### Defensefinder
+
+Running `Defensefinder` in a simple for loop:
+
+```bash
+(base) [mpaauw@omics-h0 20231206_defensefinder]$ cat defensefinder_runner.sh 
+#bin/bash!
+while IFS= read -r line; do SAMPLES+=("$line");done < barcodes.txt
+
+for sample in "${SAMPLES[@]}"
+do
+	defense-finder run ../20210518_annotation/${sample}/${sample}.faa	
+done
+```
+
+Plot the presence/absence of each defensesystem across all genomes in Figure S6 using `....R`.
+
+### CRISPRCasFinder
+
+Run `CRISPRCasFinder` on all genomes to get the spacer arrays. Note that we use `jq` library to filter the resulting `.json` files for only evidence level 4 CRISPR arrays.
 
 ```bash
 (base) [mpaauw@omics-h0 CRISPRCasFinder]$ cat CRISPR_runner.sh 
@@ -37,7 +56,7 @@ do
 done
 ```
 
-This is nice, but leaves us with spacer arrrays by all genomes individually, in a complex `.json` format that is not easy to concatenate into one file for all genomes. It's easier to concatenate all CRISPR containing genomes into one big `fasta` file, and then run the CRISPRCasFinder tool on this concatenated genome file In that way, we get all Xcr CRISPR spacers into one results file!
+This is nice, but gives us spacer arrrays of all genomes individually, in a complex `.json` format that is not easy to concatenate into one file for all genomes. It's easier to concatenate all CRISPR containing genomes into one big `fasta` file, and then run the CRISPRCasFinder tool on this concatenated genome file In that way, we get all Xcr CRISPR spacers into one results file!
 
 ```bash
 (base) [mpaauw@omics-h0 pan_CRISPR]$ cat genome_concatenator.sh 
@@ -51,17 +70,40 @@ do
 	cat genomes/${sample}.fasta >> CRISPR_plus_genomes.fasta
 done
 
-# then run CRISPRTarget on this file
+# then run CRISPRCasFinder on this file
 ```
 
-We can paste the pangenome `.json` in [CRISPRTarget](http://crispr.otago.ac.nz/CRISPRTarget/crispr_analysis.html) to find targets.
+We can paste the pangenome `.json` in [CRISPRTarget](http://crispr.otago.ac.nz/CRISPRTarget/crispr_analysis.html) to find targets. 
 
-
-## to be continued
+### Conservation of each spacer
 
 ```bash
-## add it!
+TODO
 ```
 
+In the `R` script to analyse the spacers and targets (see below) we get a list of plasmid IDs that are targetted by the Xcr spacers. We download them using NCBIs efetch
+
+```bash
+(base) [mpaauw@omics-h0 20230811_target_plasmids]$ wc -l plasmid_ids.txt 
+191 plasmid_ids.txt
+(base) [mpaauw@omics-h0 20230811_target_plasmids]$ head -n 4 plasmid_ids.txt 
+NZ_CP066960.1
+NZ_CP066927.1
+NZ_CP066957.1
+NZ_LN811400.1
+
+(base) [mpaauw@omics-h0 20230811_target_plasmids]$ cat efetch_batch.sh 
+#bin/bash!
+while IFS= read -r line; do SAMPLES+=("$line");done < plasmid_ids.txt
+
+for sample in "${SAMPLES[@]}"
+do
+	efetch -db nucleotide -format fasta -id ${sample}  > ${sample}.fa
+done
+```
+
+These plasmid sequences are then annotated using `prokka`, ORF clustered using `roary`, and inspected for ISs using `ISESscan` as before on the full genome set.
 
 ## Code to generate figures
+
+
