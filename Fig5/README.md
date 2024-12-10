@@ -17,7 +17,7 @@ do
 done
 ```
 
-Plot the presence/absence of each defensesystem across all genomes in Figure S6 using `....R`.
+Defensefinder results were concatenated into one results file `defensefinder_data.tsv`
 
 ### CRISPRCasFinder
 
@@ -102,8 +102,15 @@ do
 done
 ```
 
-These plasmid sequences are then annotated using `prokka`, ORF clustered using `roary`, and inspected for ISs using `ISESscan` as before on the full genome set.
+These plasmid sequences are then annotated using `prokka`, ORF clustered using `roary`, and inspected for ISs using `ISESscan` as before on the full genome set. From the roary results, a selection of T3Es and plasmid related proteins were extracted manually and saved to `xop_selection_presence_absence.csv`.
 
 ## Code to generate figures
 
+### Figure 5H and Figure S6
+Plot the presence/absence of each defensesystem across all genomes (Figure S6) and the number of defensesystems per genome (Fig 5H) are generated using `defensefinder_plots.R`.
 
+### Figure 5B-F
+Plot these panels using `CRISPR_spacers_plots.R`
+
+### Figure S5
+Plot this figure using `targetted_plasmid_annotation_analysis.R
