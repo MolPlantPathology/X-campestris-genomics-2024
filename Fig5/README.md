@@ -73,13 +73,47 @@ done
 # then run CRISPRCasFinder on this file
 ```
 
-We can paste the pangenome `.json` in [CRISPRTarget](http://crispr.otago.ac.nz/CRISPRTarget/crispr_analysis.html) to find targets. 
+We can paste the pangenome `.json` in [CRISPRTarget](http://crispr.otago.ac.nz/CRISPRTarget/crispr_analysis.html) to find targets, yielding the dataset `pan_xcr_v2_targets.txt`.
 
 ### Conservation of each spacer
 
+For figure 5C we wanted to know in how many genomes each unique spacer occurs. For that, we used the following script. Briefly explained, it loops over all unique spacers and searches for the spacer sequence in the CRISPRCasFinder results of the individual genomes. If a spacer is found in a genome, it reports the barcode number and the spacerID into the file `presence_list.tsv`
+
 ```bash
-TODO
+#!/bin/bash
+current_id=""
+current_sequence=""
+
+# Read the input file line by line
+while IFS= read -r line
+do
+  # Check if the line is empty or starts with '>'
+  if [[ -z "$line" ]]; then
+    continue
+  elif [[ $line =~ ^\> ]]; then
+    # Line starting with '>', this is the identifier
+    # Save the previous identifier and sequence if available
+    if [[ -n "$current_id" && -n "$current_sequence" ]]; then
+        barcode=$(echo ${current_id:0:9}) # barcode number
+	contig=$(echo ${current_id:9:9}) # contig number
+	spacer_number=$(echo ${current_id} | cut -d'|' -f 3 | cut -d'_' -f 1,2) # spacer number
+	coordinates=$(echo ${current_id} | cut -d'|' -f 3 | cut -d'_' -f 3,4 | sed 's/_/-/g') # coordinates  
+	ID2=$(echo $barcode$contig"_Unknown_"$spacer_number"|"$coordinates)
+	
+	grep $current_sequence ../barcode*/barcode*_filtered.json | column -t | cut -d ' ' -f1 | cut -d'_' -f1 | cut -d'/' -f2 | awk -v var="$ID2" '{print $0 "\t" var}'
+
+    fi
+    # Reset the variables for the new entry
+    current_id="${line#>}"
+    current_sequence=""
+  else
+    # DNA sequence line, append to the current sequence
+    current_sequence+="$line"
+  fi
+done < non_redundant_spacers_Xcr.fasta 
 ```
+
+### Analysis of gene content on the targetted spacers
 
 In the `R` script to analyse the spacers and targets (see below) we get a list of plasmid IDs that are targetted by the Xcr spacers. We download them using NCBIs efetch
 
