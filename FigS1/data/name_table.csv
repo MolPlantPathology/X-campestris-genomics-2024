@@ -1,0 +1,105 @@
+﻿barcode,tip_label,pathovvar,strain name,pathovar_strainname,species,species_strain
+na,GCA_028749645.1,Xci,CFBP1371,Xci str. CFBP1371,Xanthomonas campestris pv. incanae,Xanthomonas campestris pv. incanae str. CFBP1371
+na,GCA_028749605.1,Xci,CFBP1606,Xci str. CFBP1606,Xanthomonas campestris pv. incanae,Xanthomonas campestris pv. incanae str. CFBP1606
+na,GCA_028750055.1,Xci,8_14,Xci str. 8_14,Xanthomonas campestris pv. incanae,Xanthomonas campestris pv. incanae str. 8_14
+na,GCA_020008105.1,Xci,18048,Xci str. 18048,Xanthomonas campestris pv. incanae,Xanthomonas campestris pv. incanae str. 18048
+na,GCA_028750275.1,Xci,16_8,Xci str. 16_8,Xanthomonas campestris pv. incanae,Xanthomonas campestris pv. incanae str. 16_8
+na,GCA_028750095.1,Xci,4053,Xci str. 4053,Xanthomonas campestris pv. incanae,Xanthomonas campestris pv. incanae str. 4053
+na,GCA_028750115.1,Xci,5057,Xci str. 5057,Xanthomonas campestris pv. incanae,Xanthomonas campestris pv. incanae str. 5057
+barcode01,Xcr_barcode01,Xcr,756C,Xcr str. 756C,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. 756C
+barcode02,Xcr_barcode02,Xcr,0576,Xcr str. 0576,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. 0576
+barcode03,Xcr_barcode03,Xcr,0719,Xcr str. 0719,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. 0719
+barcode04,Xcr_barcode04,Xcr,0609,Xcr str. 0609,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. 0609
+barcode05,Xcc_barcode05,Xcc,CFBP 6943,Xcc str. CFBP 6943,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 6943
+barcode06,Xcc_barcode06,Xcc,IPO 634,Xcc str. IPO 634,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. IPO 634
+barcode07,Xcc_barcode07,Xcc,CFBP 4956,Xcc str. CFBP 4956,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 4956
+barcode08,Xcc_barcode08,Xcc,NBC831,Xcc str. NBC831,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. NBC831
+barcode09,Xcc_barcode09,Xcc,bglFP 6745,Xcc str. bglFP 6745,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. bglFP 6745
+barcode10,Xcc_barcode10,Xcc,CFBP 1713,Xcc str. CFBP 1713,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 1713
+barcode11,Xcc_barcode11,Xcc,CFBP 6863,Xcc str. CFBP 6863,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 6863
+barcode12,Xcc_barcode12,Xcc,CFBP 6865,Xcc str. CFBP 6865,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 6865
+barcode13,Xcc_barcode13,Xcc,CFBP 8406,Xcc str. CFBP 8406,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 8406
+barcode14,Xcr_barcode14,Xcr,bglFP 6752,Xcr str. bglFP 6752,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6752
+barcode15,Xcr_barcode15,Xcr,bglFP 6753,Xcr str. bglFP 6753,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6753
+barcode16,Xcc_barcode16,Xcc,LMG 00569,Xcc str. LMG 00569,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 00569
+barcode17,Xcc_barcode17,Xcc,LMG 00572,Xcc str. LMG 00572,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 00572
+barcode18,Xcc_barcode18,Xcc,LMG 00574,Xcc str. LMG 00574,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 00574
+barcode19,Xcc_barcode19,Xcc,LMG 00583,Xcc str. LMG 00583,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 00583
+barcode20,Xcc_barcode20,Xcc,LMG 07460,Xcc str. LMG 07460,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 07460
+barcode21,Xcc_barcode21,Xcc,LMG 07461,Xcc str. LMG 07461,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 07461
+barcode22,Xcc_barcode22,Xcc,LMG 07663,Xcc str. LMG 07663,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 07663
+barcode23,Xcc_barcode23,Xcc,LMG 08001,Xcc str. LMG 08001,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 08001
+barcode24,Xcc_barcode24,Xcc,LMG 08003,Xcc str. LMG 08003,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 08003
+barcode25,Xcc_barcode25,Xcc,LMG 08005,Xcc str. LMG 08005,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 08005
+barcode26,Xcc_barcode26,Xcc,LMG 08006,Xcc str. LMG 08006,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 08006
+barcode27,Xcc_barcode27,Xcc,LMG 08007,Xcc str. LMG 08007,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 08007
+barcode28,Xcc_barcode28,Xcc,LMG 08081,Xcc str. LMG 08081,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 08081
+barcode29,Xcc_barcode29,Xcc,LMG 08099,Xcc str. LMG 08099,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 08099
+barcode30,Xcc_barcode30,Xcc,LMG 08106,Xcc str. LMG 08106,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. LMG 08106
+barcode31,Xcr_barcode31,Xcr,LMG 00860,Xcr str. LMG 00860,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. LMG 00860
+barcode32,Xcr_barcode32,Xcr,LMG 07505,Xcr str. LMG 07505,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. LMG 07505
+barcode33,Xcc_barcode33,Xcc,CFBP 1121,Xcc str. CFBP 1121,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 1121
+barcode34,Xcc_barcode34,Xcc,CFBP 1710,Xcc str. CFBP 1710,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 1710
+barcode35,Xcc_barcode35,Xcc,CFBP 5127,Xcc str. CFBP 5127,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 5127
+barcode36,Xcr_barcode36,Xcr,CFBP 6579,Xcr str. CFBP 6579,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. CFBP 6579
+barcode37,Xcr_barcode37,Xcr,CFBP 6580,Xcr str. CFBP 6580,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. CFBP 6580
+barcode38,Xcc_barcode38,Xcc,CFBP 6943,Xcc str. CFBP 6943,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 6943
+barcode39,Xcc_barcode39,Xcc,CFBP 8405,Xcc str. CFBP 8405,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 8405
+barcode40,Xcc_barcode40,Xcc,bglFP 6746,Xcc str. bglFP 6746,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. bglFP 6746
+barcode41,Xcr_barcode41,Xcr,516,Xcr str. 516,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. 516
+barcode42,Xcr_barcode42,Xcr,539,Xcr str. 539,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. 539
+barcode43,Xcr_barcode43,Xcr,915,Xcr str. 915,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. 915
+barcode44,Xcr_barcode44,Xcr,bglFP 6789,Xcr str. bglFP 6789,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6789
+barcode45,Xcr_barcode45,Xcr,bglFP 6790,Xcr str. bglFP 6790,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6790
+barcode46,Xcr_barcode46,Xcr,bglFP 6791,Xcr str. bglFP 6791,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6791
+barcode47,Xcr_barcode47,Xcr,bglFP 6792,Xcr str. bglFP 6792,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6792
+barcode48,Xcr_barcode48,Xcr,bglFP 6793,Xcr str. bglFP 6793,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6793
+barcode49,Xcr_barcode49,Xcr,bglFP 6794,Xcr str. bglFP 6794,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6794
+barcode50,Xcc_barcode50,Xcc,IPO 3367,Xcc str. IPO 3367,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. IPO 3367
+barcode51,Xcr_barcode51,Xcr,BXC#138,Xcr str. BXC#138,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. BXC#138
+barcode52,Xcr_barcode52,Xcr,BXC#141,Xcr str. BXC#141,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. BXC#141
+barcode53,Xcr_barcode53,Xcr,BXC#143,Xcr str. BXC#143,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. BXC#143
+barcode54,Xcr_barcode54,Xcr,BR11,Xcr str. BR11,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. BR11
+barcode55,Xcr_barcode55,Xcr,BR25,Xcr str. BR25,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. BR25
+barcode56,Xcr_barcode56,Xcr,BR66,Xcr str. BR66,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. BR66
+barcode57,Xcr_barcode57,Xcr,NBC269,Xcr str. NBC269,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. NBC269
+barcode58,Xcr_barcode58,Xcr,NBC271,Xcr str. NBC271,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. NBC271
+barcode59,Xcr_barcode59,Xcr,NBC567,Xcr str. NBC567,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. NBC567
+barcode60,Xcr_barcode60,Xcr,NBC743,Xcr str. NBC743,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. NBC743
+barcode61,Xcr_barcode61,Xcr,bglFP 6806,Xcr str. bglFP 6806,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6806
+barcode62,Xcr_barcode62,Xcr,bglFP 6807,Xcr str. bglFP 6807,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6807
+barcode63,Xcr_barcode63,Xcr,bglFP 6808,Xcr str. bglFP 6808,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6808
+barcode64,Xcr_barcode64,Xcr,bglFP 6809,Xcr str. bglFP 6809,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6809
+barcode65,Xcr_barcode65,Xcr,bglFP 6810,Xcr str. bglFP 6810,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6810
+barcode66,Xcr_barcode66,Xcr,bglFP 6811,Xcr str. bglFP 6811,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6811
+barcode67,Xcc_barcode67,Xcc,CFBP 7156,Xcc str. CFBP 7156,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 7156
+barcode68,Xcc_barcode68,Xcc,bglFP 6813,Xcc str. bglFP 6813,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. bglFP 6813
+barcode69,Xcr_barcode69,Xcr,bglFP 6814,Xcr str. bglFP 6814,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6814
+barcode70,Xcr_barcode70,Xcr,bglFP 6815,Xcr str. bglFP 6815,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6815
+barcode71,Xcc_barcode71,Xcc,Xcc8004,Xcc str. Xcc8004,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. Xcc8004
+barcode72,Xcc_barcode72,Xcc,0419,Xcc str. 0419,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. 0419
+barcode73,Xcc_barcode73,Xcc,0483,Xcc str. 0483,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. 0483
+barcode74,Xcc_barcode74,Xcc,MBG-39.2,Xcc str. MBG-39.2,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. MBG-39.2
+barcode75,Xcc_barcode75,Xcc,MBG-107.1,Xcc str. MBG-107.1,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. MBG-107.1
+barcode76,Xcc_barcode76,Xcc,MBG-63.1,Xcc str. MBG-63.1,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. MBG-63.1
+barcode77,Xcc_barcode77,Xcc,DAPP-PG 308,Xcc str. DAPP-PG 308,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. DAPP-PG 308
+barcode78,Xcc_barcode78,Xcc,IPV-CT 62.4,Xcc str. IPV-CT 62.4,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. IPV-CT 62.4
+barcode79,Xcc_barcode79,Xcc,CFBP 8238 CN02,Xcc str. CFBP 8238 CN02,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 8238 CN02
+barcode80,Xcc_barcode80,Xcc,CFBP 8242 CN07,Xcc str. CFBP 8242 CN07,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 8242 CN07
+barcode81,Xcr_barcode81,Xcr,Xcc-R1,Xcr str. Xcc-R1,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. Xcc-R1
+barcode82,Xcc_barcode82,Xcc,Xcc-G,Xcc str. Xcc-G,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. Xcc-G
+barcode83,Xcr_barcode83,Xcr,Xcr-TH1B,Xcr str. Xcr-TH1B,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. Xcr-TH1B
+barcode84,Xcc_barcode84,Xcc,Xc02,Xcc str. Xc02,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. Xc02
+barcode85,Xcc_barcode85,Xcc,CFBP 1124,Xcc str. CFBP 1124,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 1124
+barcode86,Xcc_barcode86,Xcc,CFBP 1712,Xcc str. CFBP 1712,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 1712
+barcode87,Xcc_barcode87,Xcc,CFBP 5241,Xcc str. CFBP 5241,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 5241
+barcode88,Xcc_barcode88,Xcc,CFBP 4954,Xcc str. CFBP 4954,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. CFBP 4954
+barcode89,Xcr_barcode89,Xcr,CFBP 5828,Xcr str. CFBP 5828,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. CFBP 5828
+barcode90,Not_pathogenic_barcode90,np,CFBP 7700R,np str. CFBP 7700R,Xanthomonas campestris,Xanthomonas campestris str. CFBP 7700R
+barcode91,Xcr_barcode91,Xcr,bglFP 6767,Xcr str. bglFP 6767,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6767
+barcode92,Xcr_barcode92,Xcr,bglFP 6772,Xcr str. bglFP 6772,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. bglFP 6772
+barcode93,Xcr_barcode93,Xcr,#697,Xcr str. #697,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. #697
+barcode94,Xcc_barcode94,Xcc,#689,Xcc str. #689,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. #689
+barcode95,Xcr_barcode95,Xcr,#695,Xcr str. #695,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. #695
+barcode96,Xcr_barcode96,Xcr,#691,Xcr str. #691,Xanthomonas campestris pv. raphani,Xanthomonas campestris pv. raphani str. #691
+na,Xfragariae,Xf,PD885,Xf str. PD885,Xanthomonas campestris pv. campestris,Xanthomonas campestris pv. campestris str. PD885
