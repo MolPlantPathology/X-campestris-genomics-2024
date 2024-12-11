@@ -21,10 +21,10 @@ ppanggolin msa -p pangolin.h5 –source dna –phylo
 fasttree -nt -gtr core_genome_alignment.aln > core_gene_tree.newick 
 ```
 
-To calculate pairwise average nucleotide identity values between all genomes, we used `fastANI`
+To calculate pairwise average nucleotide identity values between all genomes, we used `fastANI`. Here, `assemblies.txt` is simply a file specifying the path to all assemblies.
 
 ```bash
-## add it!
+fastANI --ql assemblies.txt --rl assemblies.txt -t 32 -o all_vs_all.tsv
 ```
 
 ## Code to generate figures
