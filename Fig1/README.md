@@ -29,21 +29,10 @@ To calculate pairwise average nucleotide identity values between all genomes, we
 
 ## Code to generate figures
 
-### Bioassay data 
+### Bioassay data and annotated phylogenetic tree
 
-```R
-## add file, not full text
-```
-
-### Annotated phylogenetic tree
-
-```R
-## add file, not full text
-```
+See file `figure_1_scripts_v2.R`
 
 ### FastANI plot
 
-```R
-## add file, not full text
-```
-
+See file `Figure_1_fastANI_panel.R`
