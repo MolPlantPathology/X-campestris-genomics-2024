@@ -113,4 +113,4 @@ Plot the presence/absence of each defensesystem across all genomes (Figure S6) a
 Plot these panels using `CRISPR_spacers_plots.R`
 
 ### Figure S5
-Plot this figure using `targetted_plasmid_annotation_analysis.R
+Plot this figure using `targetted_plasmid_annotation_analysis.R`
