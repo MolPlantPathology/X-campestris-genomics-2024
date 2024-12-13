@@ -18,4 +18,4 @@ If you have any questions on this project, feel free to contact us:
 
 If you used any data on this page, please cite the following study:
 
-> Paauw et al: add reference later 
+> Paauw, M., Schravesande, W. E., Taks, N. W., Rep, M., Pfeilmeier, S., & van den Burg, H. A. Loss of CRISPR-Cas Shaped the Evolution of the Plant Pathogen Xanthomonas campestris. Available at SSRN 4763864.
