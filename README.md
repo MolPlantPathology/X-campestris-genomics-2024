@@ -1,10 +1,10 @@
 # *X. campestris* genomics study
 
-This repository contains code and data related to the study by Paauw *et al.* (2024) (add link!) on genomics of *X. campestris*. The repository functions as a scripts and data archive, not as a complete bacterial pangenomics tutorial, nor a interpretation of all datasets and analysis steps. For the latter, we refer to our paper in *Current Biology*. 
+This repository contains code and data related to the study by Paauw *et al.* (2024) (add link!) on genomics of *X. campestris*. The scope of this repository is to serve as a scripts and data archive, rather than as a complete bacterial pangenomics tutorial or a detailed interpretation of all datasets and analysis steps. For the latter, we refer to our paper in *Current Biology*.
 
 ## Organization
 
-We share the commands used to assemble and annotate the genomes in the folder `genome_assembly`. The other folders are organized by figure, referring to the figure numbers of the Paauw et al paper. For each figure, the documentation is divided by (i) the steps run on the compute cluster Crunchomics, and (ii) the steps to generate the plots shown in the figures. Some routine operations (e.g., concatenating results from 94 genomes into one table, sorting tables, subsetting columns) are not documented and are left as an exercise to the reader. During the study, the genomes of different isolates are referred to as 'barcode`xx`', with `xx` ranging from `00` to `96`. To map the barcode numbers to isolate name, use Table S1 in Paauw et al. paper.
+The commands used to assemble and annotate the genomes can be found in the folder `A_genome_assembly`. The other folders are organized by figure, referring to the figure numbers of the Paauw *et al.* paper. For each figure, the documentation is divided by (i) the steps run on the compute cluster Crunchomics, and (ii) the steps to generate the plots shown in the figures. Some routine operations (e.g., concatenating results from 94 genomes into one table, sorting tables, subsetting columns) are not documented and are left as an exercise to the reader. During the study, the genomes of different isolates are referred to as 'barcode`xx`', with `xx` ranging from `00` to `96`. To map the barcode numbers to isolate name, use Table S1 and S2 in Paauw *et al.* paper.
 
 ## Contact
 
