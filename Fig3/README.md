@@ -1,6 +1,6 @@
 ## Code run on compute cluster
 
-### ISEScan and distance between ISs and T3Es
+### ISEScan
 `sbatch` script to run ISESscan on all genomes. The number of insertion sequences per genome is plotted across the phylogenetic tree in Figure 3C, and as boxplots divided by Xcc and Xcr in Figure S2. 
 
 ```bash
@@ -27,13 +27,6 @@ prefix="${prefix/barcode/bc}"
 
 isescan.py --seqfile "${INPUT}${SAMPLES[$SLURM_ARRAY_TASK_ID]}_rotated.fasta" --output "${SAMPLES[$SLURM_ARRAY_TASK_ID]}" --nthread 8
 ```
-
-Then we calculate the distance between each T3E to the closest IS in each genome:
-
-```bash
-TODO
-```
-
 
 ### MobileOGdb
 
@@ -158,6 +151,35 @@ done < "$file_path"
 The number of inversions between gall pairwise genome comparisons is shown in Figure S3A, and number of inversion breakpoints in plotted in figure S3B. The overlap between inversion breakpoints and insertion sequences is shown in Figure 3.
 
 ```bash
-TODO: overlap between breakpoints and ISs
+#!/bin/bash
+file_path=barcodes.txt
+
+while IFS= read -r sampleID; do
+	# Do something with each sampleID
+	cat genome_files/${sampleID}.genome | sed 's/_polish//g' > tmp.genome	
+	grep insertion ISESscan_gffs/${sampleID}_rotated.fasta.gff | sed 's/_polish//g' > tmp.IS.gff
+	cat inversion_breakpoints_persample/${sampleID}_inversion_breakpoints.bed | sed "s/${sampleID}_//g" | bedtools slop -b 50 -g tmp.genome > tmp.inv.bed
+
+	n_IS=$(cat tmp.IS.gff | wc -l)
+	n_overlap=$(bedtools intersect -u -a tmp.IS.gff -b tmp.inv.bed | wc -l)
+
+	total=0
+
+	# shuffle 25 times and calculate the mean of the randomized overlaps
+	for ((i=1; i<=25; i++))
+	do
+		bedtools shuffle -i tmp.IS.gff -g tmp.genome > tmp.shuffle
+		n_random=$(bedtools intersect -u -a tmp.shuffle -b tmp.inv.bed | wc -l)
+		total=$((total+$n_random))	
+	done
+
+	mean=`echo  $total / 25 | bc -l`  
+	echo ${sampleID} ${n_IS} ${n_overlap} ${mean} 
+
+done < "$file_path"
 ```
 
+
+## Code for plots
+
+See `figure_3_scripts.R`, `mobileOG_plot.R`, `IS_breakpoint_overlaps.R`.
