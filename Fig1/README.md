@@ -21,6 +21,12 @@ ppanggolin msa -p pangolin.h5 –source dna –phylo
 fasttree -nt -gtr core_genome_alignment.aln > core_gene_tree.newick 
 ```
 
+We also generated a tree using IQtree2 with similar results (not shown in the paper):
+
+```bash
+iqtree2 -B 1000 -m GTR+F+I+R6 -T 48 -s core_genome_alignment.aln 
+```
+
 To calculate pairwise average nucleotide identity values between all genomes, we used `fastANI`. Here, `assemblies.txt` is simply a file specifying the path to all assemblies.
 
 ```bash
